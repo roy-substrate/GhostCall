@@ -1,3 +1,31 @@
+export type CallScenario =
+  | 'emergency'
+  | 'work'
+  | 'family'
+  | 'medical'
+  | 'delivery'
+  | 'social'
+  | 'home_service'
+  | 'custom';
+
+export interface ScenarioOption {
+  id: CallScenario;
+  label: string;
+  emoji: string;
+  description: string;
+}
+
+export const SCENARIOS: ScenarioOption[] = [
+  { id: 'emergency', label: 'Emergency', emoji: '🚨', description: 'Urgent situation requiring immediate attention' },
+  { id: 'work', label: 'Work', emoji: '💼', description: 'Work meeting, deadline, or task' },
+  { id: 'family', label: 'Family', emoji: '👪', description: 'Family member checking in or needing help' },
+  { id: 'medical', label: 'Medical', emoji: '🏥', description: 'Doctor, pharmacy, or health appointment' },
+  { id: 'delivery', label: 'Delivery', emoji: '📦', description: 'Package, food, or courier arrival' },
+  { id: 'social', label: 'Social', emoji: '🎉', description: 'Friend or social engagement' },
+  { id: 'home_service', label: 'Home Service', emoji: '🔧', description: 'Plumber, electrician, or repair service' },
+  { id: 'custom', label: 'Custom', emoji: '✏️', description: 'Write your own script' },
+];
+
 export interface FakeContact {
   id: string;
   name: string;
@@ -5,6 +33,7 @@ export interface FakeContact {
   voiceScript: string;
   avatarEmoji: string;
   isPreset: boolean;
+  scenario?: CallScenario;
 }
 
 export interface CallRecord {
