@@ -16,6 +16,9 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.ghostcall.app"
     },
+    "extra": {
+      "anthropicApiKey": ""
+    },
     "plugins": [
       "expo-router",
       [
